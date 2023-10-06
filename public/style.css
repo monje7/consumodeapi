@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:white;
+}
+
+/* Estilos para el contenedor central */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta el alto según tus necesidades */
+    margin: 0 auto;
+    max-width: 800px; /* Ancho máximo del contenido */
+}
+.contenerdor-padre{
+    display: grid;
+    place-content: center;
+}
+.contenerdor-madre{
+    display: grid;
+    place-content: center;
+    width: 1500px;
+}
+.container {
+    padding: 20px;
+    background-color: #ee0e0e;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    /* Animación de título */
+    animation: slideIn 1s ease-in-out;
+}
+
+h2{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Tablas */
+table {
+    width: 1000px;
+    box-shadow: 0 0 10px rgba(25, 93, 196, 0.849); /* Sombra gris */
+    margin: 50px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+th, td {
+    padding: 30px;
+
+    text-align: left;
+    border-bottom: 1px solid #686666cb; /* Borde gris */
+}
+
+th {
+    background-color: #102ccca4; /* Fondo gris claro para encabezados */
+}
+
+.list-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(243, 1, 1, 0.5); /* Sombra gris */
+}
+
+.list-item h3 {
+    margin-top: 0;
+}
+
+.list-item p {
+    margin: 0;
+}

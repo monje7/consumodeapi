@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion de la API</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <h1>Documentación de la API juegos</h1>
+
+    <h2>registrar</h2>
+<div class="contenedor-padre">
+    <div class="contenedor-madre">
+    <table>
+        <tr>
+            <th>Número</th>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Nombre del Webservice</th>
+            <td>Ingreso de dato de videojuegos</td>
+        </tr>
+        <tr>
+            <th>URL</th>
+            <td>Localhost:4000/juegos/registrar</td>
+        </tr>
+        <tr>
+            <th>Descripción</th>
+            <td>El ingreso de Videojuegos por medio de la Api a la base de datos.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header</th>
+            <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+        </tr>
+        <tr>
+            <th>Usuarios</th>
+            <td>Administradores</td>
+        </tr>
+        <tr>
+            <th>Request body from-data</th>
+            <td>
+                {
+                    "nombre": "el fuan",
+                    "descripcion": "todo se vale",
+                    "imagen": "",
+                    "precio": "200"
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Response</th>
+            <td>
+                "status": 200,<br>
+                "message": "se registro con éxito"
+                <br>
+                if(rows.affectedRows > 0){<br>
+                res.status(200).json({"status": 200, "message": "se registro con éxito"});<br>
+                }else{<br>
+                res.status(401).json({"status": 401, "message": "no se registro ERROR"});<br>
+                }<br>
+                catch (e) {<br>
+                res.status(500).json({"status": 500, "message": "Error en el servidor: " + e});<br>
+                }
+            </td>
+        </tr>
+    </table>
+
+
+    <h2>listar</h2>
+
+    <table>
+        <tr>
+            <th>Número</th>
+            <td>2</td>
+        </tr>
+        <tr>
+            <th>Nombre del Webservice</th>
+            <td>Listar de dato de videojuegos</td>
+        </tr>
+        <tr>
+            <th>URL</th>
+            <td>Localhost:4000/juegos/listar</td>
+        </tr>
+        <tr>
+            <th>Descripción</th>
+            <td>Mostrar en pantalla la lista de Videojuegos por medio de la Api a la base de datos.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header</th>
+            <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+        </tr>
+        <tr>
+            <th>Usuarios</th>
+            <td>Administradores</td>
+        </tr>
+        <tr>
+            <th>Request body from-data</th>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <th>Response</th>
+            <td>
+                status: 200.<br>
+                json(result);
+                <br>
+                res.status(200).json(result);<br>
+                }catch(err){<br>
+                res.status(500).json({<br>
+                massage:'error en listarjuegos :'+err})<br>
+                }<br>
+            </td>
+        </tr>
+    </table>
+
+    <h2>actualizar</h2>
+
+    <table>
+        <tr>
+            <th>Número</th>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>Nombre del Webservice</th>
+            <td>Actualizar datos de videojuegos</td>
+        </tr>
+        <tr>
+            <th>URL</th>
+            <td>Localhost:4000/juegos/actualizar/id</td>
+        </tr>
+        <tr>
+            <th>Descripción</th>
+            <td>La actualización de datos de Videojuegos por medio de la Api a la base de datos.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header</th>
+            <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+        </tr>
+        <tr>
+            <th>Usuarios</th>
+            <td>Administradores</td>
+        </tr>
+        <tr>
+            <th>Request body from-data</th>
+            <td>
+                {
+                    "nombre": "",
+                    "descripcion": "",
+                    "imagen": "",
+                    "precio": "200"
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Response</th>
+            <td>
+                "status": 200,<br>
+                "message": "se actualizó"
+                <br>
+                if(rows.affectedRows > 0){<br>
+                res.status(200).json({"status": 200, "message": "se actualizó"});<br>
+                }else{<br>
+                res.status(401).json({"status": 401, "message": "no se actualizó"});<br>
+                }<br>
+            </td>
+        </tr>
+    </table>
+
+    <h2>eliminar</h2>
+
+    <table>
+        <tr>
+            <th>Número</th>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>Nombre del Webservice</th>
+            <td>Eliminar Videojuegos</td>
+        </tr>
+        <tr>
+            <th>URL</th>
+            <td>Localhost:4000/juegos/eliminar/id</td>
+        </tr>
+        <tr>
+            <th>Descripción</th>
+            <td>Eliminación de Videojuegos por medio de la Api a la base de datos.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header</th>
+            <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+        </tr>
+        <tr>
+            <th>Usuarios</th>
+            <td>Administradores</td>
+        </tr>
+        <tr>
+            <th>Request body from-data</th>
+            <td>No aplica</td>
+        </tr>
+        <tr>
+            <th>Response</th>
+            <td>
+                "status": 200,<br>
+                "message": "se eliminó el juego con éxito..."
+                <br>
+                if(rows.affectedRows > 0){<br>
+                 res.status(200).json({"status": 200, "message": "se eliminó el juego con éxito..."});<br>
+                }else{<br>
+                 res.status(401).json({"status": 401, "message": "no se eliminó el juego"});<br>
+                }<br>
+                catch (e) {<br>
+                 res.status(500).json({"status": 500, "message": "error en el servidor " + e});<br>
+                }
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
+<h1>Documentación de la API Usuarios</h1>
+
+<h2>registrar</h2>
+<div class="contenedor-padre">
+<div class="contenedor-madre">
+<table>
+    <tr>
+        <th>Número</th>
+        <td>1</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Ingreso de dato de Usuarios</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/usuario/registrar</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>El ingreso de usuarios por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer Public<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>
+            {
+                "nombre": "andres",
+                "direccion":"cra 4 3-85",
+                "telefono":"389284923",
+                "correo":"floquiajdsk@gmail.com",
+                "rol":"usuario"
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se registro con éxito"
+            <br>
+            if(rows.affectedRows > 0){<br>
+            res.status(200).json({"status": 200, "message": "se registro con éxito"});<br>
+            }else{<br>
+            res.status(401).json({"status": 401, "message": "no se registro ERROR"});<br>
+            }<br>
+            catch (e) {<br>
+            res.status(500).json({"status": 500, "message": "Error en el servidor: " + e});<br>
+            }
+        </td>
+    </tr>
+</table>
+
+
+<h2>listar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Listar de dato de usuarios</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/usuario/listar</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>Mostrar en pantalla la lista de usuarios por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>No aplica</td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            status: 200.<br>
+            json(result);
+            <br>
+            res.status(200).json(result);<br>
+            }catch(err){<br>
+            res.status(500).json({<br>
+            massage:'error en listarusuarios :'+err})<br>
+            }<br>
+        </td>
+    </tr>
+</table>
+
+<h2>actualizar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>3</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Actualizar datos de usuarios</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/usuario/actualizar/id</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>La actualización de datos de usuarios por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>
+            {
+                "nombre": "andres",
+                "direccion":"cra 4 3-85",
+                "telefono":"389284923",
+                "correo":"floquiajdsk@gmail.com",
+                "rol":"usuario"
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se actualizó"
+            <br>
+            if(rows.affectedRows > 0){<br>
+            res.status(200).json({"status": 200, "message": "se actualizó"});<br>
+            }else{<br>
+            res.status(401).json({"status": 401, "message": "no se actualizó"});<br>
+            }<br>
+        </td>
+    </tr>
+</table>
+
+<h2>eliminar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>4</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Eliminar usuarios</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/usuario/eliminar/id</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>Eliminación de usuarios por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>No aplica</td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se eliminó el usuario con éxito..."
+            <br>
+            if(rows.affectedRows > 0){<br>
+             res.status(200).json({"status": 200, "message": "se eliminó el usuario con éxito..."});<br>
+            }else{<br>
+             res.status(401).json({"status": 401, "message": "no se eliminó el usuario"});<br>
+            }<br>
+            catch (e) {<br>
+             res.status(500).json({"status": 500, "message": "error en el servidor " + e});<br>
+            }
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+
+
+<h1>Documentación de la API alquiler</h1>
+
+<h2>registrar</h2>
+<div class="contenedor-padre">
+<div class="contenedor-madre">
+<table>
+    <tr>
+        <th>Número</th>
+        <td>1</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Ingreso de dato de alquiler</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/alquiler/registro</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>El ingreso de alquiler por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>
+            {
+                "fecha_alquiler":"15/07/2023",
+                "fecha_devolucion":"03/08/2023",
+                "cantidad":3,
+                "usuario":19,
+                "juego":3,
+                "estado":"ocupado"
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se registro con éxito"
+            <br>
+            if(rows.affectedRows > 0){<br>
+            res.status(200).json({"status": 200, "message": "se registro con éxito"});<br>
+            }else{<br>
+            res.status(401).json({"status": 401, "message": "no se registro ERROR"});<br>
+            }<br>
+            catch (e) {<br>
+            res.status(500).json({"status": 500, "message": "Error en el servidor: " + e});<br>
+            }
+        </td>
+    </tr>
+</table>
+
+
+<h2>listar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Listar de dato de alquiler</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>localhost:4000/alquiler/listar</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>Mostrar en pantalla la lista de alquiler por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>No aplica</td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            status: 200.<br>
+            json(result);
+            <br>
+            res.status(200).json(result);<br>
+            }catch(err){<br>
+            res.status(500).json({<br>
+            massage:'error en listaralquiler :'+err})<br>
+            }<br>
+        </td>
+    </tr>
+</table>
+
+<h2>actualizar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>3</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Actualizar datos de alquiler</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/alquiler/actualizar/id</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>La actualización de datos de alquiler por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>
+            {
+                "fecha_alquiler":"15/07/2023",
+                "fecha_devolucion":"03/08/2023",
+                "cantidad":3,
+                "usuario":19,
+                "juego":3,
+                "estado":"ocupado"
+            }
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se actualizó"
+            <br>
+            if(rows.affectedRows > 0){<br>
+            res.status(200).json({"status": 200, "message": "se actualizó"});<br>
+            }else{<br>
+            res.status(401).json({"status": 401, "message": "no se actualizó"});<br>
+            }<br>
+        </td>
+    </tr>
+</table>
+
+<h2>eliminar</h2>
+
+<table>
+    <tr>
+        <th>Número</th>
+        <td>4</td>
+    </tr>
+    <tr>
+        <th>Nombre del Webservice</th>
+        <td>Eliminar alquiler</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>Localhost:4000/alquiler/eliminar/id</td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td>Eliminación de alquiler por medio de la Api a la base de datos.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header</th>
+        <td>Authorization bearer {TOKEN}<br>Content-Type: From-Data</td>
+    </tr>
+    <tr>
+        <th>Usuarios</th>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <th>Request body from-data</th>
+        <td>No aplica</td>
+    </tr>
+    <tr>
+        <th>Response</th>
+        <td>
+            "status": 200,<br>
+            "message": "se eliminó el alquiler con éxito..."
+            <br>
+            if(rows.affectedRows > 0){<br>
+             res.status(200).json({"status": 200, "message": "se eliminó el alquiler con éxito..."});<br>
+            }else{<br>
+             res.status(401).json({"status": 401, "message": "no se eliminó el alquiler"});<br>
+            }<br>
+            catch (e) {<br>
+             res.status(500).json({"status": 500, "message": "error en el servidor " + e});<br>
+            }
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+
+</body>
+</html>
